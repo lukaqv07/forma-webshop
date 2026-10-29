@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#344d3d">
+  <title>FORMA — Considered Objects for Everyday Living</title>
+  <meta name="description" content="Discover FORMA's collection of audio, home and everyday essentials. A curated demo design store.">
+  <meta property="og:title" content="FORMA — Considered Objects for Everyday Living">
+  <meta property="og:description" content="Discover a considered collection of audio, home and everyday essentials.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/vase.jpg" type="image/jpeg">
+  <link rel="stylesheet" href="styles.css">
+  <script src="store.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.3 4.8a5.5 5.5 0 0 0-7.8 0l-.5.5-.5-.5a5.5 5.5 0 0 0-7.8 7.8L12 21l8.3-8.4a5.5 5.5 0 0 0 0-7.8Z"/></symbol>
+    <symbol id="i-bag" viewBox="0 0 24 24"><path d="M5 7h14l1 14H4L5 7Z"/><path d="M8 8V6a4 4 0 0 1 8 0v2"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6"/></symbol>
+    <symbol id="i-truck" viewBox="0 0 24 24"><path d="M2 5h12v12H2V5Zm12 5h4l4 4v3h-8"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></symbol>
+    <symbol id="i-return" viewBox="0 0 24 24"><path d="M3 9h11a6 6 0 0 1 0 12h-4M7 5 3 9l4 4"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 3 2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5L12 3Z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24"><path d="M3 6h18M9 6V3h6v3M5 6l1 15h12l1-15M10 10v7m4-7v7"/></symbol>
+  </svg>
+  <a class="skip-link" href="#catalog">Skip to products</a>
+  <div class="announcement"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg> A little something for your everyday. Free shipping over €100.</div>
+  <header class="container">
+    <nav class="navigation" aria-label="Main navigation">
+      <a class="logo" href="index.html" aria-label="FORMA home">forma<span class="logo-dot"></span></a>
+      <div class="nav-links">
+        <a class="nav-link active" href="#catalog">Shop all</a>
+        <button class="nav-link" data-category="Home">Home & living</button>
+        <button class="nav-link" data-category="Audio">Audio</button>
+        <button class="nav-link" data-info="about">Our story</button>
+      </div>
+      <div class="nav-actions">
+        <button class="icon-button" id="search-toggle" aria-label="Search products" title="Search products" aria-expanded="false" aria-controls="search-panel"><svg class="icon" aria-hidden="true"><use href="#i-search"/></svg></button>
+        <button class="icon-button" id="favourites-toggle" aria-label="Show favourites" title="Show favourites" aria-pressed="false"><svg class="icon heart" aria-hidden="true"><use href="#i-heart"/></svg></button>
+        <button class="icon-button" id="cart-toggle" aria-label="Open shopping bag" title="Open shopping bag"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg><span class="cart-count" id="cart-count" hidden>0</span></button>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section class="container" id="catalog" aria-labelledby="catalog-title">
+      <div class="intro">
+        <div><p class="eyebrow">The everyday collection · 2026</p><h1 id="catalog-title">FORMA Store</h1></div>
+        <p class="intro-copy">Good things for everyday living.<br>Thoughtful design. A little more you.</p>
+      </div>
+      <div class="search-panel" id="search-panel" hidden>
+        <div class="search-wrap"><svg class="icon" aria-hidden="true"><use href="#i-search"/></svg><input id="search-input" type="search" aria-label="Search the collection" placeholder="Search the collection…" autocomplete="off"><button class="icon-button" id="search-clear" aria-label="Clear search" title="Clear search"><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg></button></div>
+      </div>
+      <div class="catalog-tools">
+        <div class="tabs" role="group" aria-label="Product categories">
+          <button class="tab" data-category="All" aria-pressed="true">All objects</button>
+          <button class="tab" data-category="Home" aria-pressed="false">Home & living</button>
+          <button class="tab" data-category="Audio" aria-pressed="false">Audio</button>
+          <button class="tab" data-category="Everyday" aria-pressed="false">Everyday</button>
+        </div>
+        <label class="sort">Sort by <select id="sort-select" aria-label="Sort products"><option value="featured">Featured</option><option value="price-low">Price: low to high</option><option value="price-high">Price: high to low</option><option value="name">Name: A–Z</option></select></label>
+      </div>
+      <div class="result-line"><span id="result-count" role="status" aria-live="polite">6 objects</span><button class="text-button" id="reset-filters" hidden>Clear filters</button></div>
+      <div class="product-grid" id="product-grid"></div>
+      <noscript><p>Please enable JavaScript to browse products and use the shopping bag.</p></noscript>
+    </section>
+    <section class="editorial" aria-labelledby="editorial-title">
+      <div class="editorial-copy"><p class="eyebrow">Less, but better</p><h2 id="editorial-title">A place for<br>the good things.</h2><p>Objects with a purpose. Shapes with a little personality. A collection made for the way you live.</p><button class="text-button" data-info="about">The FORMA story <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button></div>
+      <img src="assets/collection.jpg" alt="Moss green headphones, a red portable speaker and an ivory dome lamp" width="1536" height="1024" loading="lazy">
+    </section>
+    <div class="container">
+      <section class="values" aria-label="Store benefits">
+        <div class="value"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg><div><h3>On its way to you</h3><p>Free shipping on orders over €100</p></div></div>
+        <div class="value"><svg class="icon" aria-hidden="true"><use href="#i-return"/></svg><div><h3>A little peace of mind</h3><p>30-day returns</p></div></div>
+        <div class="value"><svg class="icon" aria-hidden="true"><use href="#i-spark"/></svg><div><h3>Considered from the start</h3><p>Design worth making room for</p></div></div>
+      </section>
+      <footer>
+        <div class="footer-main"><div><a class="logo" href="#catalog" aria-label="FORMA home">forma<span class="logo-dot"></span></a><p>Good things. Everyday.</p></div><div class="footer-links"><button data-info="about">Our story</button><button data-info="shipping">Shipping & returns</button><button data-info="contact">Contact</button></div></div>
+        <div class="footer-bottom"><span>© 2026 FORMA</span><span>Demo store · Sample products and prices · No real purchases</span></div>
+      </footer>
+    </div>
+  </main>
+  <dialog class="cart-dialog" id="cart-dialog" aria-labelledby="cart-title"><div class="cart-shell"><div class="dialog-header"><h2 id="cart-title">Your bag <span id="cart-title-count"></span></h2><button class="icon-button" data-close aria-label="Close shopping bag" title="Close"><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg></button></div><div class="cart-items" id="cart-items"></div><div class="cart-summary" id="cart-summary"></div></div></dialog>
+  <dialog class="product-dialog" id="product-dialog" aria-labelledby="detail-title"><div class="dialog-header"><h2 id="detail-title">A closer look</h2><button class="icon-button" data-close aria-label="Close product details" title="Close"><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg></button></div><div id="product-detail"></div></dialog>
+  <dialog class="checkout-dialog" id="checkout-dialog" aria-labelledby="checkout-title"><div class="dialog-header"><h2 id="checkout-title">Demo checkout</h2><button class="icon-button" data-close aria-label="Close checkout" title="Close"><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg></button></div><div id="checkout-content"></div></dialog>
+  <dialog class="info-dialog" id="info-dialog" aria-labelledby="info-title"><div class="dialog-header"><h2 id="info-title">Our story</h2><button class="icon-button" data-close aria-label="Close information" title="Close"><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg></button></div><div class="info-content" id="info-content"></div></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
